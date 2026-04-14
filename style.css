@@ -1,0 +1,154 @@
+/* cabecera */
+#cabecera{
+    width: 95%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    z-index: 1000;
+    top: 0;
+    background: white;
+    position: fixed;
+}
+#letmecook{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 22px;
+    margin-right: auto;
+}
+#letmecook a{
+    text-decoration: none;
+    text-align: center;
+}
+
+#letmecook a span{
+    font-size: 28px;
+    color: #ff7300;
+}
+
+#menu{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#menu a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.naranja{
+    background-color: transparent;
+    color: #000000;
+    padding: 18px 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.naranja:hover{
+    background-color: #ffe1c8;
+    color: #ff7300;
+    cursor: pointer;
+}
+.naranja:active{
+    background-color: #fcb478;
+    cursor: pointer;
+}
+
+.actual{
+    border-bottom: #ff7300 5px solid;
+    color: #ff7300;
+    font-weight: bold;
+    padding: 1px;
+}
+
+.inicio_sesion{
+    background-color: #ff7300;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.inicio_sesion a{
+    text-decoration: none;
+    color: white;
+}
+
+.inicio_sesion:hover{
+    background-color: #ffa65d;
+    color: white;
+    cursor: pointer;
+}
+
+.inicio_sesion:active{
+    background-color: #fac294;
+}
+
+.hamburguesa{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 750px) {
+    #menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 200px;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 20px 35px rgba(132, 0, 255, 0.1), 0 5px 15px rgba(174, 0, 255, 0.1);
+    }
+    .hamburguesa{
+        display: block;
+        color: #ff7300;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    #menu a{
+        padding: 10px 0;
+    }
+    #contenedor{
+        margin-top: 100px;
+        margin-inline: 20px;
+    }
+
+    .hamburguesa:hover{
+        color: #ffac75;
+    }
+    .hamburguesa:active{
+        color: #ffcea7;
+    }
+}
+
+
+
+/* pie de página */
+#piepagina{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #ff7300;
+    color: white;
+    font-size: 15px;
+    margin-top: 100px;
+    padding: 30px 40px;
+    bottom: 0;
+}
+.piepagina{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-inline: 20px;
+    gap: 60px;
+}
+.piepagina div{
+    width: 300px;
+}
