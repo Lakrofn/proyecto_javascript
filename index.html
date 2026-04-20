@@ -184,33 +184,35 @@
 </section>
 
 <!-- SECCIÓN 2 -->
-<section id="registroPilotos" class="seccion">
-    <h1>Registro de pilotos</h1>
-    <div id="formPilotos">
-        <form >
-            <label>Nombre:</label>
-            <input type="text" id="nombrePiloto">
-
-            <label>Rango:</label>
-            <input type="text" id="RangoPiloto">
-
-            <label>Nave asignada:</label>
-            <select id="NavePiloto"></select>
-
-            <label>Victorias:</label>
-            <input type="number" id="VictoriasPiloto">
-
-            <label>Estado:</label>
-            <select id="pilotoEstado">
-                <option value="activo">Activo</option>
-                <option value="herido">Herido</option>
-                <option value="kia">KIA</option>
-            </select>
-        </form>
-        <button id="Guardar" onclick="crearPiloto">Guardar piloto</button>
-        <div id="listaPilotos" class="pilotos-container"></div>
-    </div>
+<section id="registroPilotos" class="seccion"> 
+    <h1>Registro de pilotos</h1> 
     
+    <form id="formPilotos"> 
+        
+        <label>Nombre:</label>
+        <input type="text" id="nombrePiloto">
+
+        <label>Rango:</label>
+        <input type="text" id="RangoPiloto">
+
+        <label>Nave asignada:</label>
+        <select id="NavePiloto"></select>
+
+        <label>Victorias:</label>
+        <input type="number" id="VictoriasPiloto">
+
+        <label>Estado:</label>
+        <select id="pilotoEstado">
+            <option value="activo">Activo</option>
+            <option value="herido">Herido</option>
+            <option value="kia">KIA</option>
+        </select>
+
+        <button type="submit">Guardar piloto</button>
+
+    </form>
+
+    <div id="listaPilotos" class="pilotos-container"></div>
 </section>
 
 <!-- SECCIÓN 3 -->
