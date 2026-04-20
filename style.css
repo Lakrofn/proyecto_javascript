@@ -1,3 +1,4 @@
+/* RESET GENERAL */
 *{
     margin: 0;
     padding: 0;
@@ -6,36 +7,34 @@
 }
 
 body{
-    justify-content: center;
-    align-items: center;
+    background: #000;
     min-height: 100vh;
-    background: #000000;
+    color: #fff;
 }
 
-
-/* cabecera */
+/* CABECERA */
 #cabecera{
-    width: 95%;
+    width: 100%;
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0 20px;
-    z-index: 1000;
-    top: 0;
-    background: white;
+    background: #fff;
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
+
 #letmecook{
     display: flex;
     align-items: center;
-    justify-content: left;
-    font-size: 22px;
-    margin-right: auto;
+    gap: 10px;
 }
+
 #letmecook a{
     text-decoration: none;
-    text-align: center;
 }
 
 #letmecook a span{
@@ -43,103 +42,59 @@ body{
     color: #ff7300;
 }
 
+/* MENÚ PRINCIPAL */
 #menu{
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 }
 
 #menu a{
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .naranja{
     background-color: transparent;
-    color: #000000;
-    padding: 18px 10px;
-    font-size: 18px;
+    color: #000;
+    padding: 10px 8px;
     text-align: center;
+    transition: 0.2s;
 }
+
 .naranja:hover{
     background-color: #ffe1c8;
     color: #ff7300;
     cursor: pointer;
 }
-.naranja:active{
-    background-color: #fcb478;
-    cursor: pointer;
-}
 
 .actual{
-    border-bottom: #ff7300 5px solid;
+    border-bottom: 3px solid #ff7300;
     color: #ff7300;
     font-weight: bold;
-    padding: 1px;
 }
 
-.inicio_sesion{
-    background-color: #ff7300;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-}
-
-.inicio_sesion a{
-    text-decoration: none;
-    color: white;
-}
-
-.inicio_sesion:hover{
-    background-color: #ffa65d;
-    color: white;
-    cursor: pointer;
-}
-
-.inicio_sesion:active{
-    background-color: #fac294;
-}
-
+/* HAMBURGUESA */
 .hamburguesa{
     display: none;
     font-size: 30px;
     cursor: pointer;
+    color: #ff7300;
 }
 
-@media (max-width: 750px) {
-    #menu {
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: white;
-        width: 200px;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 20px 35px rgba(132, 0, 255, 0.1), 0 5px 15px rgba(174, 0, 255, 0.1);
-    }
-    .hamburguesa{
-        display: block;
-        color: #ff7300;
-        margin-left: auto;
-        margin-right: 30px;
-    }
-    #menu a{
-        padding: 10px 0;
-    }
-    #contenedor{
-        margin-top: 100px;
-        margin-inline: 20px;
-    }
+/* SECCIONES GENERALES */
+.seccion{
+    display: none;              /* TODAS OCULTAS POR DEFECTO */
+    padding-top: 90px;          /* Para que no tape la cabecera fija */
+    padding-bottom: 40px;
+    padding-inline: 15px;
+}
 
-    .hamburguesa:hover{
-        color: #ffac75;
-    }
-    .hamburguesa:active{
-        color: #ffcea7;
-    }
+.seccion.activa{
+    display: flex;              /* SOLO LA ACTIVA SE VE */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 /* seccion 1 */
@@ -162,24 +117,18 @@ body{
     box-shadow: 0px 0px 35px rgb(0, 85, 255);
 }
 
+/* TÍTULOS */
 .titulos{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    color: white;
-    box-shadow: rgb(0, 85, 255) 0 0 15px;
+    color: #fff;
+    box-shadow: 0 0 15px rgb(0, 85, 255);
+    padding: 10px 20px;
+    margin-bottom: 15px;
 }
 
-#seccion1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 100px;
-}
-
+/* HANGAR DE NAVES */
 .naves{
     display: flex;
     flex-wrap: wrap;
@@ -187,6 +136,7 @@ body{
     gap: 20px;
 }
 
+/* TARJETAS DE NAVES */
 .card-dinamica{
     position: relative;
     width: 300px;
@@ -209,7 +159,6 @@ body{
 }
 
 .card-dinamica .delantera img{
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -221,30 +170,32 @@ body{
     width: 100%;
     height: 45px;
     line-height: 45px;
-    color: white;
-    background: #000000;
+    color: #fff;
+    background: #000;
     text-align: center;
 }
 
 .card-dinamica .trasera{
     transform: perspective(600px) rotateY(180deg);
-    background: #000000;
+    background: #000;
     padding: 15px;
-    color: white;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
     box-shadow: 0 0 15px rgb(0, 85, 255);
 }
+
 .card-dinamica .trasera h2{
-    font-size: 30px;
-    margin-top: 20px;
-    letter-spacing: 2px;
+    font-size: 22px;
+    margin-top: 10px;
+    letter-spacing: 1px;
 }
 
 .card-dinamica .trasera p{
     letter-spacing: 1px;
+    font-size: 14px;
 }
 
 .card-dinamica:hover .delantera{
@@ -321,26 +272,130 @@ body{
     100%{ box-shadow: 0 0 15px 8px red; }
 }
 
-/* pie de página */
+/* FORMULARIOS (REGISTRO Y MISIONES) */
+form{
+    width: 350px;
+    max-width: 95vw;
+    margin: 10px auto;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid #00ff9d;
+    border-radius: 10px;
+    color: #fff;
+}
+
+form h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form label{
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #00ff9d;
+}
+
+form input,
+form select{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background: #111;
+    border: 1px solid #00ff9d;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+form input:focus,
+form select:focus{
+    border-color: #00ff9d;
+    box-shadow: 0 0 10px #00ff9d;
+}
+
+#Guardar{
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #00ff9d;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+#Guardar:hover{
+    background: #fff;
+    box-shadow: 0 0 15px #00ff9d;
+    transform: scale(1.03);
+}
+
+/* FOOTER */
 #piepagina{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     background-color: #ff7300;
-    color: white;
+    color: #fff;
     font-size: 15px;
-    margin-top: 100px;
-    padding: 30px 40px;
-    bottom: 0;
+    margin-top: 40px;
+    padding: 30px 20px;
 }
+
 .piepagina{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-inline: 20px;
-    gap: 60px;
+    gap: 40px;
+    margin-bottom: 10px;
 }
+
 .piepagina div{
     width: 300px;
+    max-width: 90vw;
+    text-align: center;
 }
+
+/* RESPONSIVE: MENÚ Y TARJETAS */
+@media (max-width: 850px){
+    #menu{
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #fff;
+        width: 220px;
+        flex-direction: column;
+        padding: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    #menu a{
+        padding: 8px 0;
+    }
+
+    .hamburguesa{
+        display: block;
+    }
+}
+
+@media (max-width: 480px){
+    .card-dinamica{
+        width: 90vw;
+        height: 300px;
+    }
+
+    .titulos h1{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    
+}
+
