@@ -190,9 +190,31 @@
     </section>
     <section>
         <h1>Registro de pilotos</h1>
+        
+        <form id="formulario">
+            <label>Nombre:</label>
+            <input type="text" id="nombrePiloto" ><br>
+            <label>Rango:</label>
+            <input type="text" id="RangoPiloto" ><br>
+            <label>Nave asignada:</label>
+            <select id="NavePiloto" ></select><br>
+            <label>Victorias:</label>
+            <input type="number" id="VictoriasPiloto"><br>
+
+            <label>Estado:</label>
+            <select id="pilotoEstado" >
+                <option value="activo" >Activo</option>
+                <option value="herido">Herido</option>
+                <option value="kia">KIA</option>
+            </select>
+
+            <button type="submit" id="Guardar">Guardar piloto</button>
+        </form>
+        
     </section>
     <section>
         <h1>Panel de misiones</h1>
+
     </section>
     <section>
         <h1>Mando de la alianza</h1>
