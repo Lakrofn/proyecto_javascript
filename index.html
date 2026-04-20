@@ -8,16 +8,15 @@
 </head>
 <body>
     <header id="cabecera">
-        <div id="letmecook">
-            <img src="./images/logo.png" alt="logo" width="65">
-            <a href="index.html"><span class="naranja">Star Wars</span></a>
+        <div id="starwars">
+            <img src="./images/logo.webp" alt="logo" width="65">
         </div>
         <div class="hamburguesa" onclick="toggleMenu()">☰</div>
         <nav id="menu">
-        <div><a onclick="mostrarSeccion('seccion1')" class="naranja actual">Hangar de naves</a></div>
-        <div><a onclick="mostrarSeccion('registroPilotos')" class="naranja">Registro de pilotos</a></div>
-        <div><a onclick="mostrarSeccion('panelMisiones')" class="naranja">Panel de misiones</a></div>
-        <div><a onclick="mostrarSeccion('mandoAlianza')" class="naranja">Mando de la alianza</a></div>
+        <div class="amarillo "><a onclick="mostrarSeccion('seccion1')" class="actual">Hangar de naves</a></div>
+        <div class="amarillo "><a onclick="mostrarSeccion('registroPilotos')" >Registro de pilotos</a></div>
+        <div class="amarillo "><a onclick="mostrarSeccion('panelMisiones')" >Panel de misiones</a></div>
+        <div class="amarillo "><a onclick="mostrarSeccion('mandoAlianza')" >Mando de la alianza</a></div>
     </nav>
     </header>
 <!-- SECCIÓN 1 -->
@@ -34,7 +33,7 @@
         <!-- TARJETAS DE NAVES -->
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/ala-x.png" alt="ala-x">
+                <img src="./images/ala-x.webp" alt="ala-x">
                 <h3>Ala‑X (X‑Wing)</h3>
             </div>
             <div class="cara trasera">
@@ -49,7 +48,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/halcon.png" alt="Halcón Milenario">
+                <img src="./images/halcon.webp" alt="Halcón Milenario">
                 <h3>Halcón Milenario</h3>
             </div>
             <div class="cara trasera">
@@ -64,7 +63,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/crucero.png" alt="Home One (MC80)">
+                <img src="./images/crucero.webp" alt="Home One (MC80)">
                 <h3>Home One (MC80)</h3>
             </div>
             <div class="cara trasera">
@@ -79,7 +78,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/tantive.png" alt="Tantive IV (CR90)">
+                <img src="./images/tantive.webp" alt="Tantive IV (CR90)">
                 <h3>Tantive IV (CR90)</h3>
             </div>
             <div class="cara trasera">
@@ -94,7 +93,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/ala-a.png" alt="Ala‑A (A‑Wing)">
+                <img src="./images/ala-a.webp" alt="Ala‑A (A‑Wing)">
                 <h3>Ala‑A (A‑Wing)</h3>
             </div>
             <div class="cara trasera">
@@ -109,7 +108,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/ala_y.png" alt="Ala‑Y (Y‑Wing)">
+                <img src="./images/ala_y.webp" alt="Ala‑Y (Y‑Wing)">
                 <h3>Ala‑Y (Y‑Wing)</h3>
             </div>
             <div class="cara trasera">
@@ -124,7 +123,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/fragata.png" alt="Fragata Nebulon‑B">
+                <img src="./images/fragata.webp" alt="Fragata Nebulon‑B">
                 <h3>Fragata Nebulon‑B</h3>
             </div>
             <div class="cara trasera">
@@ -139,7 +138,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/profundity.png" alt="Profundity (MC75)">
+                <img src="./images/profundity.webp" alt="Profundity (MC75)">
                 <h3>Profundity (MC75)</h3>
             </div>
             <div class="cara trasera">
@@ -154,7 +153,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/ala_b.png" alt="Ala‑B (B‑Wing)">
+                <img src="./images/ala_b.webp" alt="Ala‑B (B‑Wing)">
                 <h3>Ala‑B (B‑Wing)</h3>
             </div>
             <div class="cara trasera">
@@ -169,7 +168,7 @@
 
         <div class="card-dinamica">
             <div class="cara delantera">
-                <img src="./images/transporte.png" alt="Transporte GR‑75">
+                <img src="./images/transporte.webp" alt="Transporte GR‑75">
                 <h3>Transporte GR‑75</h3>
             </div>
             <div class="cara trasera">
@@ -184,63 +183,69 @@
         </div>
 </section>
 
-
+<!-- SECCIÓN 2 -->
 <section id="registroPilotos" class="seccion">
     <h1>Registro de pilotos</h1>
+    <div id="formPilotos">
+        <form >
+            <label>Nombre:</label>
+            <input type="text" id="nombrePiloto">
 
-    <form id="formPilotos">
-        <label>Nombre:</label>
-        <input type="text" id="nombrePiloto">
+            <label>Rango:</label>
+            <input type="text" id="RangoPiloto">
 
-        <label>Rango:</label>
-        <input type="text" id="RangoPiloto">
+            <label>Nave asignada:</label>
+            <select id="NavePiloto"></select>
 
-        <label>Nave asignada:</label>
-        <select id="NavePiloto"></select>
+            <label>Victorias:</label>
+            <input type="number" id="VictoriasPiloto">
 
-        <label>Victorias:</label>
-        <input type="number" id="VictoriasPiloto">
-
-        <label>Estado:</label>
-        <select id="pilotoEstado">
-            <option value="activo">Activo</option>
-            <option value="herido">Herido</option>
-            <option value="kia">KIA</option>
-        </select>
-
-        <button type="submit" id="Guardar">Guardar piloto</button>
-    </form>
+            <label>Estado:</label>
+            <select id="pilotoEstado">
+                <option value="activo">Activo</option>
+                <option value="herido">Herido</option>
+                <option value="kia">KIA</option>
+            </select>
+        </form>
+        <button id="Guardar">Guardar piloto</button>
+    </div>
+    
 </section>
 
-
+<!-- SECCIÓN 3 -->
 <section id="panelMisiones" class="seccion">
     <h1>Panel de misiones</h1>
+    <div id="formMisiones">
+        <form >
+            <label>Nombre Misión:</label>
+            <input type="text" id="nombreMision">
 
-    <form id="formMisiones">
-        <label>Nombre Misión:</label>
-        <input type="text" id="nombreMision">
+            <label>Descripción:</label>
+            <input type="text" id="DescripcionMision">
 
-        <label>Descripción:</label>
-        <input type="text" id="DescripcionMision">
+            <label>Piloto asignado:</label>
+            <select id="PilotoAsignado">
+                <option value="Yoda">Yoda</option>
+                <option value="Obi-Wan">Obi-Wan</option>
+                <option value="Anakin">Darth Vader</option>
+            </select>
 
-        <label>Piloto asignado:</label>
-        <select id="PilotoAsignado"></select>
+            <label>Nivel Dificultad:</label>
+            <select id="NivelDificultad">
+                <option value="facil">Fácil</option>
+                <option value="media">Media</option>
+                <option value="dificil">Difícil</option>
+                <option value="imposible">Imposible</option>
+            </select>
 
-        <label>Nivel Dificultad:</label>
-        <select id="NivelDificultad">
-            <option value="facil">Fácil</option>
-            <option value="media">Media</option>
-            <option value="dificil">Difícil</option>
-            <option value="imposible">Imposible</option>
-        </select>
+            <label>Fecha inicio:</label>
+            <input type="date" id="fechaInicio">
 
-        <label>Fecha inicio:</label>
-        <input type="date" id="fechaInicio">
-    </form>
-
-    <section id="seccion3">
+        </form>
+        <button onclick="crearMision()">Crear misión</button>
+    </div>
         <div class="panel">
-            <div class="misiones">
+            <div id="pendiente" class="misiones pendiente">
                 <h2>Pendiente</h2>
             </div>
             <div class="sable">
@@ -249,7 +254,7 @@
                 <div class="mid"></div>
                 <div class="bottom"></div>
             </div>
-            <div class="misiones">
+            <div class="misiones en-curso">
                 <h2>En curso</h2>
             </div>
             <div class="sable">
@@ -258,11 +263,10 @@
                 <div class="mid"></div>
                 <div class="bottom"></div>
             </div>
-            <div class="misiones">
+            <div class="misiones completada">
                 <h2>Completada</h2>
             </div>
         </div>
-    </section>
 </section>
 
 
