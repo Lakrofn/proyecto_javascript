@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de la Alianza Rebelde</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="cabecera">
+        <div id="starwars">
+            <img src="./images/logo.webp" alt="logo" width="65">
+        </div>
+        <div class="hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+        <div class="amarillo"><a onclick="mostrarSeccion('seccion1')" class="actual">Hangar de naves</a></div>
+        <div class="amarillo"><a onclick="mostrarSeccion('registroPilotos')" >Registro de pilotos</a></div>
+        <div class="amarillo"><a onclick="mostrarSeccion('panelMisiones')" >Panel de misiones</a></div>
+        <div class="amarillo"><a onclick="mostrarSeccion('mandoAlianza')" >Mando de la alianza</a></div>
+    </nav>
+    </header>
+<!-- SECCIÓN 1 -->
+<section id="seccion1" class="seccion activa">
+    <div>
+        <h1 class="glow azul">Hangar de naves</h1>
+    </div>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" 
+        placeholder="Buscar por nombres" title="Ingrese un nombre">
+
+    <div class="naves">
+
+        <!-- TARJETAS DE NAVES -->
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/ala-x.webp" alt="ala-x">
+                <h3>Ala‑X (X‑Wing)</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Ala‑X (X‑Wing)</h2>
+                <p>Tipo: Caza estelar</p>
+                <p>Velocidad: 100 MGL</p>
+                <p>Tripulación: 1 piloto + 1 droide astromecánico</p>
+                <p>Estado: Operativo</p>
+                <p>✖️🛩️</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/halcon.webp" alt="Halcón Milenario">
+                <h3>Halcón Milenario</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Halcón Milenario (Millennium Falcon)</h2>
+                <p>Tipo: Carguero ligero YT‑1300 modificado</p>
+                <p>Velocidad: 75 MGL</p>
+                <p>Tripulación: 4 — hasta 60 pasajeros</p>
+                <p>Estado: Operativo</p>
+                <p>🐦‍⬛✨</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/crucero.webp" alt="Home One (MC80)">
+                <h3>Home One (MC80)</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Home One (MC80)</h2>
+                <p>Tipo: Crucero Mon Calamari MC80</p>
+                <p>Velocidad: 60 MGLT</p>
+                <p>Tripulación: ~5.000</p>
+                <p>Estado: Operativo tras Endor</p>
+                <p>🛳️⭐</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/tantive.webp" alt="Tantive IV (CR90)">
+                <h3>Tantive IV (CR90)</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Tantive IV (CR90)</h2>
+                <p>Tipo: Corbeta Corelliana CR90</p>
+                <p>Velocidad: 81 MGLT</p>
+                <p>Tripulación: 30–165</p>
+                <p>Estado: Destruida en Rogue One</p>
+                <p>🚀📡</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/ala-a.webp" alt="Ala‑A (A‑Wing)">
+                <h3>Ala‑A (A‑Wing)</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Ala‑A (A‑Wing)</h2>
+                <p>Tipo: Caza interceptor</p>
+                <p>Velocidad: 120 MGLT</p>
+                <p>Tripulación: 1 piloto</p>
+                <p>Estado: Operativo</p>
+                <p>🛩️💨</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/ala_y.webp" alt="Ala‑Y (Y‑Wing)">
+                <h3>Ala‑Y (Y‑Wing)</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Ala‑Y (Y‑Wing)</h2>
+                <p>Tipo: Bombardero pesado</p>
+                <p>Velocidad: 70 MGLT</p>
+                <p>Tripulación: 1 piloto + 1 artillero</p>
+                <p>Estado: Operativo</p>
+                <p>🛠️🚀</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/fragata.webp" alt="Fragata Nebulon‑B">
+                <h3>Fragata Nebulon‑B</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Fragata Nebulon‑B</h2>
+                <p>Tipo: Fragata de escolta / médica</p>
+                <p>Velocidad: 60 MGLT</p>
+                <p>Tripulación: ~920</p>
+                <p>Estado: Operativa</p>
+                <p>🏥🛰️</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/profundity.webp" alt="Profundity (MC75)">
+                <h3>Profundity (MC75)</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Profundity (MC75)</h2>
+                <p>Tipo: Crucero Mon Calamari MC75</p>
+                <p>Velocidad: ≈60 MGL</p>
+                <p>Tripulación: No especificada</p>
+                <p>Estado: Destruida en Rogue One</p>
+                <p>🌊🚀</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/ala_b.webp" alt="Ala‑B (B‑Wing)">
+                <h3>Ala‑B (B‑Wing)</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Ala‑B (B‑Wing)</h2>
+                <p>Tipo: Caza de asalto / rompe‑naves</p>
+                <p>Velocidad: 70 MGLT</p>
+                <p>Tripulación: 1 piloto</p>
+                <p>Estado: Operativo</p>
+                <p>🔧🛩️</p>
+            </div>
+        </div>
+
+        <div class="card-dinamica">
+            <div class="cara delantera">
+                <img src="./images/transporte.webp" alt="Transporte GR‑75">
+                <h3>Transporte GR‑75</h3>
+            </div>
+            <div class="cara trasera">
+                <h2>Transporte GR‑75</h2>
+                <p>Tipo: Transporte de carga / evacuación</p>
+                <p>Velocidad: 40–60 MGLT</p>
+                <p>Tripulación: 6–12</p>
+                <p>Estado: Operativo</p>
+                <p>📦🚚</p>
+            </div>
+        </div>
+        </div>
+</section>
+
+<!-- SECCIÓN 2 -->
+<section id="registroPilotos" class="seccion"> 
+    <h1 class="glow verde">Registro de pilotos</h1>
+    
+    <form id="formPilotos"> 
+        
+        <label>Nombre:</label>
+        <input type="text" id="nombrePiloto">
+
+        <label>Rango:</label>
+        <input type="text" id="RangoPiloto">
+
+        <label>Nave asignada:</label>
+        <select id="NavePiloto"></select>
+
+        <label>Victorias:</label>
+        <input type="number" id="VictoriasPiloto">
+
+        <label>Estado:</label>
+        <select id="pilotoEstado">
+            <option value="activo">Activo</option>
+            <option value="herido">Herido</option>
+            <option value="kia">KIA</option>
+        </select>
+
+        <button type="submit">Guardar piloto</button>
+
+    </form>
+
+    <div id="listaPilotos" class="pilotos-container"></div>
+</section>
+
+<!-- SECCIÓN 3 -->
+<section id="panelMisiones" class="seccion">
+    <h1 class="glow rojo">Panel de misiones</h1>
+    <div id="formMisiones">
+        <form >
+            <label>Nombre Misión:</label>
+            <input type="text" id="nombreMision">
+
+            <label>Descripción:</label>
+            <input type="text" id="DescripcionMision">
+
+            <label>Piloto asignado:</label>
+            <select id="PilotoAsignado">
+                <option value="Yoda">Yoda</option>
+                <option value="Obi-Wan">Obi-Wan</option>
+                <option value="Anakin">Darth Vader</option>
+            </select>
+
+            <label>Nivel Dificultad:</label>
+            <select id="NivelDificultad">
+                <option value="facil">Fácil</option>
+                <option value="media">Media</option>
+                <option value="dificil">Difícil</option>
+                <option value="imposible">Imposible</option>
+            </select>
+
+            <label>Fecha inicio:</label>
+            <input type="date" id="fechaInicio">
+
+        </form>
+        <button onclick="crearMision()">Crear misión</button>
+    </div>
+        <div class="panel">
+            <div id="pendiente" class="misiones pendiente">
+                <h2>Pendiente</h2>
+            </div>
+            <div class="sable">
+                <div class="luz"></div>
+                <div class="top"></div>
+                <div class="mid"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="misiones en-curso">
+                <h2>En curso</h2>
+            </div>
+            <div class="sable">
+                <div class="luz"></div>
+                <div class="top"></div>
+                <div class="mid"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="misiones completada">
+                <h2>Completada</h2>
+            </div>
+        </div>
+</section>
+
+
+<section id="mandoAlianza" class="seccion">
+    <h1>Mando de la Alianza</h1>
+
+    <div id="dashboard">
+
+        <div class="bloque">
+            <h3>Pilotos</h3>
+            <p id="totalPilotos"></p>
+            <p id="pilotosActivos"></p>
+            <p id="pilotosHeridos"></p>
+            <p id="pilotosKia"></p>
+        </div>
+
+        <div class="bloque">
+            <h3>Misiones</h3>
+            <p id="totalMisiones"></p>
+            <p id="misionesPendientes"></p>
+            <p id="misionesCurso"></p>
+            <p id="misionesHechas"></p>
+        </div>
+
+        <div class="bloque">
+            <h3>Mejor piloto</h3>
+            <p id="mejorPiloto"></p>
+            <p id="mejorVictorias"></p>
+        </div>
+
+        <div class="bloque">
+            <h3>Progreso</h3>
+            <div class="barra">
+                <div id="barraProgreso"></div>
+            </div>
+            <p id="porcentajeMisiones"></p>
+        </div>
+
+    </div>
+</section>
+<footer id="piepagina">
+    <div class="piepagina">
+        <div>
+            <h2>Proyecto Star Wars</h2>
+            <p>Proyecto Realizado por Alvaro y Javier</p>
+        </div>
+    </div>
+    <div>
+        <p>© Página oficial de Star Wars</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
