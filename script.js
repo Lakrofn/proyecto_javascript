@@ -1,9 +1,10 @@
-function toggleMenu() { 
-    const menu = document.querySelector('#menu'); 
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex"; 
+// MENU
+function toggleMenu() {  
+    const menu = document.querySelector('#menu');  
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";  
 }
 
-// 🔍 BUSCADOR (CORREGIDO)
+// BUSCADOR
 document.addEventListener('keyup', e => {
     if (e.target.matches('#myInput')) {
         document.querySelectorAll('.card-piloto .delantera').forEach(card => {
@@ -14,20 +15,22 @@ document.addEventListener('keyup', e => {
     }
 });
 
-// ✅ SOLO UNA FUNCIÓN mostrarSeccion
+// SECCIONES
 function mostrarSeccion(id) {
     document.querySelectorAll('.seccion').forEach(sec => {
         sec.classList.remove('activa');
     });
     document.getElementById(id).classList.add('activa');
 
-    // Menú activo
     document.querySelectorAll('#menu a').forEach(a => a.classList.remove('actual'));
     const enlace = Array.from(document.querySelectorAll('#menu a'))
         .find(a => a.getAttribute('onclick')?.includes(id));
     if (enlace) enlace.classList.add('actual');
-}
 
+    if (id === "mandoAlianza") {
+        actualizarDashboard();
+    }
+}
 
 // IMÁGENES
 const imagenesNaves = {
@@ -43,15 +46,17 @@ const imagenesNaves = {
     "Transporte GR-75": "./images/piloto7.webp"
 };
 
-
-// DATOS
-let pilotos = [];
+// LOCALSTORAGE PILOTOS
+let pilotos = JSON.parse(localStorage.getItem("pilotos")) || [];
 let pilotoEditando = null;
 
+function guardarPilotos() {
+    localStorage.setItem("pilotos", JSON.stringify(pilotos));
+}
+
+// NAVES
 const naves = Object.keys(imagenesNaves);
 
-
-// CARGAR NAVES
 function cargarNaves() {
     const select = document.getElementById("NavePiloto");
     select.innerHTML = "";
@@ -64,7 +69,6 @@ function cargarNaves() {
     });
 }
 cargarNaves();
-
 
 // VALIDACIÓN
 function validarFormulario(nombre, rango, nave, victorias, estado) {
@@ -79,8 +83,7 @@ function validarFormulario(nombre, rango, nave, victorias, estado) {
     return true;
 }
 
-
-// AÑADIR / EDITAR
+// PILOTOS
 document.getElementById("formPilotos").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -101,12 +104,12 @@ document.getElementById("formPilotos").addEventListener("submit", function(e) {
         pilotos.push(nuevoPiloto);
     }
 
+    guardarPilotos();
     this.reset();
     mostrarPilotos();
 });
 
-
-// MOSTRAR TARJETAS
+// MOSTRAR PILOTOS
 function mostrarPilotos() {
     const contenedor = document.getElementById("listaPilotos");
 
@@ -129,7 +132,7 @@ function mostrarPilotos() {
 
         tarjeta.innerHTML = `
             <div class="cara delantera">
-                <img src="${imagenesNaves[p.nave] || './images/default.jpg'}" alt="${p.nave}">
+                <img src="${imagenesNaves[p.nave] || './images/default.jpg'}">
                 <h3>${p.nombre}</h3>
             </div>
 
@@ -140,7 +143,7 @@ function mostrarPilotos() {
                 <p><strong>Victorias:</strong> ${p.victorias}</p>
                 <p class="${estadoClase}"><strong>Estado:</strong> ${p.estado}</p>
 
-                <div style="display:flex; justify-content:center; gap:10px;">
+                <div style="display:flex; gap:10px; justify-content:center;">
                     <button onclick="editarPiloto(${index})">Editar</button>
                     <button onclick="eliminarPiloto(${index})">Eliminar</button>
                 </div>
@@ -151,8 +154,7 @@ function mostrarPilotos() {
     });
 }
 
-
-// EDITAR
+// EDITAR / ELIMINAR
 function editarPiloto(index) {
     const p = pilotos[index];
 
@@ -164,36 +166,29 @@ function editarPiloto(index) {
 
     pilotoEditando = index;
 }
-window.editarPiloto = editarPiloto;
-window.eliminarPiloto = eliminarPiloto;
 
-
-// ELIMINAR
 function eliminarPiloto(index) {
     if (confirm("¿Seguro que quieres eliminar este piloto?")) {
         pilotos.splice(index, 1);
+        guardarPilotos();
         mostrarPilotos();
     }
 }
 
+window.editarPiloto = editarPiloto;
+window.eliminarPiloto = eliminarPiloto;
 
-
-//  MISIONES (DRAG & DROP)
-
-
+// MISIONES
 function crearMision() {
     const pendiente = document.getElementById("pendiente");
 
     const nombre = document.getElementById("nombreMision").value;
     const descripcion = document.getElementById("DescripcionMision").value;
     const piloto = document.getElementById("PilotoAsignado").value;
-    const nivelDificultad = document.getElementById("NivelDificultad").value;
+    const nivel = document.getElementById("NivelDificultad").value;
     const fecha = document.getElementById("fechaInicio").value;
 
-    if (!nombre) {
-        alert("El nombre es obligatorio");
-        return;
-    }
+    if (!nombre) return alert("El nombre es obligatorio");
 
     const tarjeta = document.createElement("div");
     tarjeta.classList.add("mision");
@@ -203,10 +198,10 @@ function crearMision() {
         <h3>${nombre}</h3>
         <div class="info-general">
             <p>${piloto}</p>
-            <p>${nivelDificultad}</p>
+            <p>${nivel}</p>
             <p>${fecha}</p>
         </div>
-        <div class="info-descripcion" style="display: none;">
+        <div class="info-descripcion" style="display:none;">
             <p>${descripcion}</p>
         </div>
         <div>
@@ -215,32 +210,19 @@ function crearMision() {
         </div>
     `;
 
-    // DRAG SOLO A ESTA TARJETA
-    tarjeta.addEventListener('dragstart', () => {
-        tarjeta.classList.add('arrastrando');
-        setTimeout(() => tarjeta.style.display = 'none', 0);
-    });
-
-    tarjeta.addEventListener('dragend', () => {
-        tarjeta.classList.remove('arrastrando');
-        tarjeta.style.display = 'block';
-    });
+    tarjeta.addEventListener("dragstart", () => tarjeta.classList.add("arrastrando"));
+    tarjeta.addEventListener("dragend", () => tarjeta.classList.remove("arrastrando"));
 
     pendiente.appendChild(tarjeta);
 
-    // LIMPIAR FORM
     document.getElementById("nombreMision").value = "";
     document.getElementById("DescripcionMision").value = "";
-    document.getElementById("PilotoAsignado").value = "";
-    document.getElementById("NivelDificultad").value = "";
-    document.getElementById("fechaInicio").value = "";
 }
 
-
-// COLUMNAS (SOLO UNA VEZ)
+// DROP ZONES
 document.querySelectorAll('.misiones').forEach(columna => {
 
-    columna.addEventListener('dragover', (e) => {
+    columna.addEventListener('dragover', e => {
         e.preventDefault();
         columna.classList.add('hover-columna');
     });
@@ -249,25 +231,25 @@ document.querySelectorAll('.misiones').forEach(columna => {
         columna.classList.remove('hover-columna');
     });
 
-    columna.addEventListener('drop', (e) => {
+    columna.addEventListener('drop', e => {
         e.preventDefault();
         columna.classList.remove('hover-columna');
 
         const mision = document.querySelector('.arrastrando');
+        if (!mision) return;
+
         columna.appendChild(mision);
     });
 });
 
-
-// BORRAR MISIÓN
+// ACCIONES MISIONES
 function borrarMision(boton){
-    boton.closest(".mision").remove();
+    boton.closest(".mision")?.remove();
 }
 
-
-// MOSTRAR DESCRIPCIÓN
 function mostrarDescripcion(boton) {
     const tarjeta = boton.closest('.mision');
+
     const infoGeneral = tarjeta.querySelector('.info-general');
     const infoDesc = tarjeta.querySelector('.info-descripcion');
 
@@ -281,3 +263,51 @@ function mostrarDescripcion(boton) {
         boton.textContent = "Descripción";
     }
 }
+
+// =====================
+// 🧠 DASHBOARD (SECCIÓN 4)
+// =====================
+function actualizarDashboard() {
+
+    const pilotos = JSON.parse(localStorage.getItem("pilotos")) || [];
+    const misiones = Array.from(document.querySelectorAll(".mision"));
+
+    const activos = pilotos.filter(p => p.estado === "activo").length;
+    const heridos = pilotos.filter(p => p.estado === "herido").length;
+    const kia = pilotos.filter(p => p.estado === "kia").length;
+
+    const pendientes = document.querySelectorAll(".pendiente .mision").length;
+    const curso = document.querySelectorAll(".en-curso .mision").length;
+    const hechas = document.querySelectorAll(".completada .mision").length;
+
+    const mejor = pilotos.reduce((max, p) =>
+        (!max || p.victorias > max.victorias) ? p : max
+    , null);
+
+    const totalMisiones = misiones.length;
+    const porcentaje = totalMisiones === 0 ? 0 : Math.round((hechas / totalMisiones) * 100);
+
+    document.getElementById("totalPilotos").textContent = "Total: " + pilotos.length;
+    document.getElementById("pilotosActivos").textContent = "Activos: " + activos;
+    document.getElementById("pilotosHeridos").textContent = "Heridos: " + heridos;
+    document.getElementById("pilotosKia").textContent = "KIA: " + kia;
+
+    document.getElementById("totalMisiones").textContent = "Total: " + totalMisiones;
+    document.getElementById("misionesPendientes").textContent = "Pendientes: " + pendientes;
+    document.getElementById("misionesCurso").textContent = "En curso: " + curso;
+    document.getElementById("misionesHechas").textContent = "Completadas: " + hechas;
+
+    document.getElementById("mejorPiloto").textContent =
+        mejor ? mejor.nombre : "Ninguno";
+
+    document.getElementById("mejorVictorias").textContent =
+        mejor ? mejor.victorias + " victorias" : "-";
+
+    document.getElementById("barraProgreso").style.width = porcentaje + "%";
+
+    document.getElementById("porcentajeMisiones").textContent =
+        porcentaje + "% completadas";
+}
+
+// INIT
+mostrarPilotos();
