@@ -13,16 +13,16 @@
         </div>
         <div class="hamburguesa" onclick="toggleMenu()">☰</div>
         <nav id="menu">
-        <div class="amarillo "><a onclick="mostrarSeccion('seccion1')" class="actual">Hangar de naves</a></div>
-        <div class="amarillo "><a onclick="mostrarSeccion('registroPilotos')" >Registro de pilotos</a></div>
-        <div class="amarillo "><a onclick="mostrarSeccion('panelMisiones')" >Panel de misiones</a></div>
-        <div class="amarillo "><a onclick="mostrarSeccion('mandoAlianza')" >Mando de la alianza</a></div>
+        <div class="amarillo"><a onclick="mostrarSeccion('seccion1')" class="actual">Hangar de naves</a></div>
+        <div class="amarillo"><a onclick="mostrarSeccion('registroPilotos')" >Registro de pilotos</a></div>
+        <div class="amarillo"><a onclick="mostrarSeccion('panelMisiones')" >Panel de misiones</a></div>
+        <div class="amarillo"><a onclick="mostrarSeccion('mandoAlianza')" >Mando de la alianza</a></div>
     </nav>
     </header>
 <!-- SECCIÓN 1 -->
 <section id="seccion1" class="seccion activa">
-    <div class="titulos">
-        <h1>Hangar de naves</h1>
+    <div>
+        <h1 class="glow azul">Hangar de naves</h1>
     </div>
 
     <input type="text" id="myInput" onkeyup="myFunction()" 
@@ -185,7 +185,7 @@
 
 <!-- SECCIÓN 2 -->
 <section id="registroPilotos" class="seccion">
-    <h1>Registro de pilotos</h1>
+    <h1 class="glow verde">Registro de pilotos</h1>
     <div id="formPilotos">
         <form >
             <label>Nombre:</label>
@@ -215,7 +215,7 @@
 
 <!-- SECCIÓN 3 -->
 <section id="panelMisiones" class="seccion">
-    <h1>Panel de misiones</h1>
+    <h1 class="glow rojo">Panel de misiones</h1>
     <div id="formMisiones">
         <form >
             <label>Nombre Misión:</label>

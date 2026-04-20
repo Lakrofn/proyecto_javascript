@@ -56,12 +56,6 @@ body{
     cursor: pointer;
 }
 
-.actual{
-    border-bottom: 3px solid yellow;
-    font-weight: bold;
-}
-
-
 /* HAMBURGUESA */
 .hamburguesa{
     display: none;
@@ -107,14 +101,60 @@ body{
 }
 
 /* TÍTULOS */
-.titulos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+.azul{
+    font-size: 80px;
     color: #fff;
-    box-shadow: 0 0 15px rgb(0, 85, 255);
-    padding: 10px 20px;
-    margin-bottom: 15px;
+    text-align: center;
+    animation: glowAzul 1s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+@-webkit-keyframes glowAzul {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue, 0 0 60px blue, 0 0 70px blue;
+    }
+    
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue, 0 0 60px blue, 0 0 70px blue, 0 0 80px blue;
+    }
+}
+
+.verde{
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glowVerde 1s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+@-webkit-keyframes glowVerde {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green;
+    }
+    
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px green, 0 0 40px green, 0 0 50px green, 0 0 60px green, 0 0 70px green, 0 0 80px green;
+    }
+}
+
+.rojo{
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glowRojo 1s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+@-webkit-keyframes glowRojo {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
+    }
+    
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red, 0 0 80px red;
+    }
 }
 
 /* HANGAR DE NAVES */
