@@ -97,6 +97,26 @@ body{
     gap: 20px;
 }
 
+/* seccion 1 */
+#myInput {
+    background-image: url('./images/lupa.webp');
+    background-size: 60px;
+    background-position: -8px -3px;
+    background-repeat: no-repeat;
+    width: 70%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    margin-bottom: 25px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+#myInput:focus{
+    box-shadow: 0px 0px 35px rgb(0, 85, 255);
+}
+
 /* TÍTULOS */
 .titulos{
     display: flex;
@@ -184,6 +204,72 @@ body{
 
 .card-dinamica:hover .trasera{
     transform: perspective(600px) rotateY(360deg);
+}
+
+/* Section 3 */
+.panel{
+    display: flex;
+    justify-content: center;
+}
+.misiones{
+    color: white;
+    padding: 20px;
+
+}
+
+.sable{
+    margin-bottom: 1em;
+}
+
+.top, .mid, .bottom{
+    background: linear-gradient(90deg,
+    #1f1f1f 0%,
+    #1c1c1c 50%,
+    #4a4a4a 60%,
+    #1c1c1c 70%,
+    #1f1f1f 100%
+    );
+    margin: 0 auto;
+    border: #333 solid 1px;
+}
+
+.bottom{
+    width: 2em;
+    height: 3em;
+    background: linear-gradient(90deg,
+    #1f1f1f 0%,
+    #505050 30%,
+    #8c8c8c 50%,
+    #1f1f1f 100%
+    );
+}
+
+.mid{
+    width: 1.5em;
+    height: 3em;
+}
+
+.top{
+    height: 3em;
+    width: 2em;
+    position: relative;
+}
+
+.luz{
+    width: 1.1em;
+    height: 32em;
+    background: #ffaaaa;
+    margin: 0 auto;
+    border-radius: 3em 3em 0 0;
+    position: relative;
+    box-shadow: 0 -10px 30px 10px red;
+    border: 2px solid red;
+    animation: flicker 1s infinite linear;
+}
+
+@keyframes flicker {
+    90%{ box-shadow: 0 0 20px 5px red; }
+    100%{ box-shadow: 0 0 15px 8px red; }
 }
 
 /* FORMULARIOS (REGISTRO Y MISIONES) */
@@ -312,4 +398,3 @@ form select:focus{
 
     
 }
-

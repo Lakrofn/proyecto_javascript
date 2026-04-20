@@ -7,28 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header id="cabecera">
-    <div id="letmecook">
-        <img src="./images/logo.png" alt="logo" width="65">
-        <a href="index.html"><span class="naranja">Star Wars</span></a>
-    </div>
-
-    <div class="hamburguesa" onclick="toggleMenu()">☰</div>
-
-    <nav id="menu">
+    <header id="cabecera">
+        <div id="letmecook">
+            <img src="./images/logo.png" alt="logo" width="65">
+            <a href="index.html"><span class="naranja">Star Wars</span></a>
+        </div>
+        <div class="hamburguesa" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
         <div><a onclick="mostrarSeccion('seccion1')" class="naranja actual">Hangar de naves</a></div>
         <div><a onclick="mostrarSeccion('registroPilotos')" class="naranja">Registro de pilotos</a></div>
         <div><a onclick="mostrarSeccion('panelMisiones')" class="naranja">Panel de misiones</a></div>
         <div><a onclick="mostrarSeccion('mandoAlianza')" class="naranja">Mando de la alianza</a></div>
     </nav>
-</header>
-
+    </header>
 <!-- SECCIÓN 1 -->
 <section id="seccion1" class="seccion activa">
     <div class="titulos">
         <h1>Hangar de naves</h1>
     </div>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" 
+        placeholder="Buscar por nombres" title="Ingrese un nombre">
 
     <div class="naves">
 
@@ -182,8 +181,7 @@
                 <p>📦🚚</p>
             </div>
         </div>
-
-    </div>
+        </div>
 </section>
 
 
@@ -239,6 +237,32 @@
         <label>Fecha inicio:</label>
         <input type="date" id="fechaInicio">
     </form>
+
+    <section id="seccion3">
+        <div class="panel">
+            <div class="misiones">
+                <h2>Pendiente</h2>
+            </div>
+            <div class="sable">
+                <div class="luz"></div>
+                <div class="top"></div>
+                <div class="mid"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="misiones">
+                <h2>En curso</h2>
+            </div>
+            <div class="sable">
+                <div class="luz"></div>
+                <div class="top"></div>
+                <div class="mid"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="misiones">
+                <h2>Completada</h2>
+            </div>
+        </div>
+    </section>
 </section>
 
 
