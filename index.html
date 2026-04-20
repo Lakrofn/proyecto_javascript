@@ -210,8 +210,10 @@
 
         <button type="submit" id="Guardar">Guardar piloto</button>
     </form>
-</section>
 
+    <!-- TARJETAS DINÁMICAS DE PILOTOS -->
+    <div id="listaPilotos" class="pilotos-container"></div>
+</section>
 
 <section id="panelMisiones" class="seccion">
     <h1>Panel de misiones</h1>
@@ -219,13 +221,10 @@
     <form id="formMisiones">
         <label>Nombre Misión:</label>
         <input type="text" id="nombreMision">
-
         <label>Descripción:</label>
         <input type="text" id="DescripcionMision">
-
         <label>Piloto asignado:</label>
         <select id="PilotoAsignado"></select>
-
         <label>Nivel Dificultad:</label>
         <select id="NivelDificultad">
             <option value="facil">Fácil</option>
