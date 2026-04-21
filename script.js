@@ -311,3 +311,18 @@ function actualizarDashboard() {
 
 // INIT
 mostrarPilotos();
+
+let index = 0;
+const slider = document.getElementById("slider");
+const total = slider.children.length;
+
+setInterval(() => {
+    index++;
+
+    if(index >= total){
+        index = 0;
+    }
+
+    slider.style.transform = `translateX(-${index * 100 / total}%)`;
+
+}, 10000); // cambia cada  segundos
