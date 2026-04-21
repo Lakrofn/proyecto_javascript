@@ -157,6 +157,24 @@ body{
     }
 }
 
+.morado{
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glowMorado 1s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+@keyframes glowMorado {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bb00ff, 0 0 40px #bb00ff, 0 0 50px #bb00ff, 0 0 60px #bb00ff, 0 0 70px #bb00ff;
+    }
+    
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #bb00ff, 0 0 40px #bb00ff, 0 0 50px #bb00ff, 0 0 60px #bb00ff, 0 0 70px #bb00ff, 0 0 80px #bb00ff;
+    }
+}
+
 /* HANGAR DE NAVES */
 .naves{
     display: flex;
@@ -171,6 +189,8 @@ body{
     position: relative;
     width: 300px;
     height: 350px;
+    margin-bottom: 20px;
+    margin-inline: 10px;
 }
 
 .card-dinamica .cara{
@@ -185,7 +205,7 @@ body{
 
 .card-dinamica .delantera{
     transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 0 15px rgb(0, 85, 255);
+    box-shadow: 0 0 25px rgb(0, 85, 255);
 }
 
 .card-dinamica .delantera img{
@@ -214,7 +234,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    box-shadow: 0 0 15px rgb(0, 85, 255);
+    box-shadow: 0 0 25px rgb(0, 85, 255);
 }
 
 .card-dinamica .trasera h2{
@@ -624,6 +644,85 @@ body{
     transform: scale(0.95);
 }
 
+/* section 4 */
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 2fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.bloque {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 15px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 0 25px #bb00ff;
+}
+
+.bloque:hover{
+    box-shadow: 0 0 35px #bb00ff;
+}
+
+.bloque h3 {
+    margin-bottom: 10px;
+    color: #bb00ff;
+}
+
+.barra {
+    width: 100%;
+    height: 18px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#barraProgreso {
+    height: 100%;
+    width: 0%;
+    background: #bb00ff;
+    transition: width 0.4s ease;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.bloque {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 15px;
+    color: white;
+}
+
+.bloque h3 {
+    margin-bottom: 10px;
+    color: #bb00ff;
+}
+
+.barra {
+    width: 100%;
+    height: 18px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#barraProgreso {
+    height: 100%;
+    width: 0%;
+    background: #bb00ff;
+    transition: width 0.4s ease;
+}
+
 /* FOOTER */
 #piepagina{
     display: flex;
@@ -685,75 +784,4 @@ body{
         font-size: 20px;
         text-align: center;
     }
-}
-#dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.bloque {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 15px;
-    color: white;
-}
-
-.bloque h3 {
-    margin-bottom: 10px;
-    color: #00ff88;
-}
-
-.barra {
-    width: 100%;
-    height: 18px;
-    background: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-#barraProgreso {
-    height: 100%;
-    width: 0%;
-    background: #00ff88;
-    transition: width 0.4s ease;
-}
-
-#dashboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.bloque {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 15px;
-    color: white;
-}
-
-.bloque h3 {
-    margin-bottom: 10px;
-    color: #00ff88;
-}
-
-.barra {
-    width: 100%;
-    height: 18px;
-    background: #333;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-#barraProgreso {
-    height: 100%;
-    width: 0%;
-    background: #00ff88;
-    transition: width 0.4s ease;
 }
