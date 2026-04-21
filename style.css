@@ -644,6 +644,43 @@ body{
     transform: scale(0.95);
 }
 
+.seccion2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel1 {
+    width: 300px;
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 25px #ff0000;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.carrusel1 ul {
+    display: flex;
+    width: 300%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    transition: transform 1s ease;
+}
+
+.carrusel1 li {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.carrusel1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* section 4 */
 #dashboard {
     display: grid;
